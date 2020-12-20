@@ -1,0 +1,2 @@
+class BuriedTreasure < ApplicationRecord
+end

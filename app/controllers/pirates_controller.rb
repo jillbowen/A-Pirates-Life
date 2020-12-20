@@ -1,0 +1,2 @@
+class PiratesController < ApplicationController
+end

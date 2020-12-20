@@ -1,0 +1,2 @@
+class Pirate < ApplicationRecord
+end

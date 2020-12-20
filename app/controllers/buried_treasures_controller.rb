@@ -1,0 +1,2 @@
+class BuriedTreasuresController < ApplicationController
+end
