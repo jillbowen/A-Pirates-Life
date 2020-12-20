@@ -1,8 +1,8 @@
 class CreateBuriedTreasures < ActiveRecord::Migration[6.0]
   def change
     create_table :buried_treasures do |t|
-      t.string :pirate_id
-      t.string :map_id
+      t.belongs_to :pirate, foreign_key: true
+      t.belongs_to :map, foreign_key: true
 
       t.timestamps
     end
