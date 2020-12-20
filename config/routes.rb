@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  get '/', to: 'sessions#welcome'
+  
   resources :buried_treasures
   resources :maps
   resources :pirates
