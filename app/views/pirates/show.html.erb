@@ -1,2 +1,5 @@
 <h1 align="center">Ahoy, <%= @pirate.name %>!</h1>
 
+<h3 align="center">Yer sailing the <%= @pirate.name_of_ship %> with a crew of <%= @pirate.crew_size %>, and <%= @pirate.bottles_of_rum %> bottles of rum, yaaaaarg!</h3>
+
+<p><%= link_to "Add a new Treasure Map to yer stash", '/maps/new' %>

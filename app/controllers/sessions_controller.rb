@@ -6,8 +6,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @pirate = Pirate.find_by(name: params[:pirate][:name])    
-        if @pirate && @pirate.authenticate(params[:pirate][:password])
+        if @pirate = Pirate.find_by(name: params[:name])
             session[:pirate_id] = @pirate.id 
             redirect_to pirate_path(@pirate)
         else    

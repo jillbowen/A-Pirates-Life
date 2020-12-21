@@ -2,7 +2,7 @@
 
 <p><%= flash[:error] %></p>
 
-<%= form_tag '/session', method: :post do %>
+<%= form_tag '/login', method: :post do %>
     <p><%= label_tag :name, "Yer Name:" %>
     <%= text_field_tag :name %></p>
 
