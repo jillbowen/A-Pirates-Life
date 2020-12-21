@@ -2,12 +2,12 @@
 
 <p><%= flash[:error] %></p>
 
-<%= form_for(:pirate) do |f| %>
-    <p><%= f.label "Yer Name:" %>
-    <%= f.text_field :name %></p>
+<%= form_tag '/session', method: :post do %>
+    <p><%= label_tag :name, "Yer Name:" %>
+    <%= text_field_tag :name %></p>
 
-    <p><%= f.label "Yer Secret Code:" %>
-    <%= f.password_field :password %></p>
+    <p><%= label_tag :password, "Yer Secret Code:" %>
+    <%= password_field_tag :password %></p>
 
-    <p><%= f.submit "Head to the High Seas" %></p>
+    <p><%= submit_tag "Head to the High Seas" %></p>
 <% end %>

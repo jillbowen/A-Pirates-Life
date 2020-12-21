@@ -1,6 +1,7 @@
 class PiratesController < ApplicationController
     
     def new
+        @pirate = Pirate.new
     end
 
     def create
@@ -9,12 +10,12 @@ class PiratesController < ApplicationController
             session[:pirate_id] = @pirate.id 
             redirect_to pirate_path(@pirate)
         else
-            render :new
+            render 'new'
         end
     end
 
     def show
-        @pirate = Pirate.find_by(params[:id])
+        @pirate = Pirate.find_by_id(params[:id])
         redirect_to '/' if !@pirate
     end
 

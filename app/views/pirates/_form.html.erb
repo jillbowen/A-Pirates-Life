@@ -1,17 +1,17 @@
 <%= form_for(@pirate) do |f| %>
-    <p><%= f.label "Yer Name:" %>
+    <p><%= f.label :name, "Yer Name:" %>
     <%= f.text_field :name %></p>
 
-    <p><%= f.label "Yer Secret Code:" %>
+    <p><%= f.label :password, "Yer Secret Code:" %>
     <%= f.password_field :password %></p>
 
-    <p><%= f.label "Name of Yer Ship:" %>
+    <p><%= f.label :name_of_ship, "Name of Yer Ship:" %>
     <%= f.text_field :name_of_ship %></p>
 
-    <p><%= f.label "How Many in Yer Crew?:" %>
+    <p><%= f.label :crew_size, "How Many in Yer Crew?:" %>
     <%= f.number_field :crew_size %></p>
 
-    <p><%= f.label "Bottles of Rum:" %>
+    <p><%= f.label :bottles_of_rum, "Bottles of Rum:" %>
     <%= f.number_field :bottles_of_rum %></p>
 
     <p><%= f.submit "Head to the High Seas" %></p>
