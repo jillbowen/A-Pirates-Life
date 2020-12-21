@@ -1,0 +1,13 @@
+<h1>Login to see yer maps and treasures</h1>
+
+<p><%= flash[:error] %></p>
+
+<%= form_for(:pirate) do |f| %>
+    <p><%= f.label "Yer Name:" %>
+    <%= f.text_field :name %></p>
+
+    <p><%= f.label "Yer Secret Code:" %>
+    <%= f.password_field :password %></p>
+
+    <p><%= f.submit "Head to the High Seas" %></p>
+<% end %>

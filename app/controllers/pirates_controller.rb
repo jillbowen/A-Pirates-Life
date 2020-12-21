@@ -1,7 +1,6 @@
 class PiratesController < ApplicationController
     
     def new
-        @pirate = Pirate.new
     end
 
     def create
@@ -17,6 +16,9 @@ class PiratesController < ApplicationController
     def show
         @pirate = Pirate.find_by(params[:id])
         redirect_to '/' if !@pirate
+    end
+
+    def index
     end
 
     private
