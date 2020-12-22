@@ -1,0 +1,21 @@
+<%= form_for(@map) do |f| %>
+    <p><%= f.label :name, "Map Name:" %>
+    <%= f.text_field :name %></p>
+
+    <p><%= f.label :booby_traps, "How Many Booby Traps Are There?:" %>
+    <%= f.number_field :booby_traps %></p>
+
+    <p><%= f.label :curses, "How Many Curses Will This Treasure Give You?:" %>
+    <%= f.number_field :curses %></p>
+
+    <p><%= f.label :description_of_booty, "What Will Yer Spoils Be?:" %>
+    <%= f.text_field :description_of_booty %></p>
+
+    <p><%= f.label :image_of_map, "Upload An Image of The Map:" %>
+    <%= f.file_field :image_of_map %></p>
+
+    <p><%= f.check_box :found_treasure %>
+    <%= f.label :found_treasure, "Treasure Found" %></p>
+
+    <p><%= f.submit "Add This Map" %></p>
+<% end %>
