@@ -8,10 +8,8 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'pirates#new'
 
-  resources :maps do
-    resources :buried_treasures
-  end
-
+  resources :maps
+  resources :buried_treasures
   resources :pirates
   
 end
