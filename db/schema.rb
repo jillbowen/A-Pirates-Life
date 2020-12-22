@@ -10,26 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_033157) do
+ActiveRecord::Schema.define(version: 2020_12_20_225530) do
 
   create_table "buried_treasures", force: :cascade do |t|
-    t.integer "pirate_id"
-    t.integer "map_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["map_id"], name: "index_buried_treasures_on_map_id"
-    t.index ["pirate_id"], name: "index_buried_treasures_on_pirate_id"
-  end
-
-  create_table "maps", force: :cascade do |t|
     t.string "name"
     t.integer "booby_traps"
     t.integer "curses"
     t.string "description_of_booty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.binary "map_image"
-    t.boolean "found_treasure"
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.integer "pirate_id"
+    t.integer "buried_treasure_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buried_treasure_id"], name: "index_maps_on_buried_treasure_id"
+    t.index ["pirate_id"], name: "index_maps_on_pirate_id"
   end
 
   create_table "pirates", force: :cascade do |t|
@@ -42,6 +40,6 @@ ActiveRecord::Schema.define(version: 2020_12_22_033157) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "buried_treasures", "maps"
-  add_foreign_key "buried_treasures", "pirates"
+  add_foreign_key "maps", "buried_treasures"
+  add_foreign_key "maps", "pirates"
 end

@@ -1,6 +1,6 @@
-class CreateMaps < ActiveRecord::Migration[6.0]
+class CreateBuriedTreasures < ActiveRecord::Migration[6.0]
   def change
-    create_table :maps do |t|
+    create_table :buried_treasures do |t|
       t.string :name
       t.integer :booby_traps
       t.integer :curses
