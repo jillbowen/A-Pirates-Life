@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_031103) do
+ActiveRecord::Schema.define(version: 2020_12_22_033157) do
 
   create_table "buried_treasures", force: :cascade do |t|
     t.integer "pirate_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_031103) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.binary "map_image"
+    t.boolean "found_treasure"
   end
 
   create_table "pirates", force: :cascade do |t|
