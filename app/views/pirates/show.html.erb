@@ -2,11 +2,4 @@
 
 <h3 align="center">Yer sailing the <%= @pirate.name_of_ship %> with a crew of <%= @pirate.crew_size %>, and <%= @pirate.bottles_of_rum %> bottles of rum, yaaaaarg!</h3>
 
-<h2>These be the maps ye found on yer adventures:</h2>
-    <ul>
-        <% @pirate.maps.each do |map| %>
-            <li>link_to map.name, map_path(map) %></li>
-        <% end %>
-    </ul>
-
-<p><%= link_to "Add a new Treasure Map to yer stash", '/maps/new' %>
+<p><%= link_to "Add a new Treasure to yer stash", '/buried_treasures/new' %>
