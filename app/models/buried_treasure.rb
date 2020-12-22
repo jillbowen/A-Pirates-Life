@@ -1,4 +1,5 @@
 class BuriedTreasure < ApplicationRecord
-    belongs_to :pirate 
-    belongs_to :map 
+    has_many :maps
+    has_many :pirates, through: :maps
+    validates :name, presence: true, uniqueness: true
 end
