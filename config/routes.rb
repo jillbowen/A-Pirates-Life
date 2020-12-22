@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'pirates#new'
 
-  resources :buried_treasures
-  resources :maps
+  resources :maps do
+    resources :buried_treasures
+  end
+
   resources :pirates
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
 end
