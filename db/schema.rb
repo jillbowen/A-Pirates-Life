@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_20_225530) do
+ActiveRecord::Schema.define(version: 2020_12_23_214220) do
 
   create_table "buried_treasures", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_12_20_225530) do
     t.integer "buried_treasure_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.binary "map_image"
     t.index ["buried_treasure_id"], name: "index_maps_on_buried_treasure_id"
     t.index ["pirate_id"], name: "index_maps_on_pirate_id"
   end
