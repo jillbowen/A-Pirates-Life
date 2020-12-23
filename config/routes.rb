@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get '/', to: 'sessions#welcome'
+  get '/', to: 'applications#welcome'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
