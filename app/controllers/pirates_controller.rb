@@ -2,6 +2,7 @@ class PiratesController < ApplicationController
     
     def new
         @pirate = Pirate.new
+        @pirate.maps.build
     end
 
     def create
@@ -25,6 +26,16 @@ class PiratesController < ApplicationController
     private
 
     def pirate_params
-        params.require(:pirate).permit(:name, :password, :name_of_ship, :crew_size, :bottles_of_rum)
+        params.require(:pirate).permit(
+            :name, 
+            :password, 
+            :name_of_ship, 
+            :crew_size, 
+            :bottles_of_rum, 
+            maps_attributes: [
+                :map_name,
+                :secret_hiding_place
+            ]
+        )
     end
 end

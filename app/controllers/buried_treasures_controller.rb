@@ -13,6 +13,10 @@ class BuriedTreasuresController < ApplicationController
         end
     end
 
+    def show
+        @buried_treasure = BuriedTreasure.find_by_id(params[:id])
+    end
+
     private
 
     def buried_treasure_params
