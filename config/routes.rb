@@ -13,6 +13,5 @@ Rails.application.routes.draw do
   resources :pirates do
     resources :maps
   end
-  post '/pirates/:pirate_id/maps/new', to: 'maps#show'
   
 end
