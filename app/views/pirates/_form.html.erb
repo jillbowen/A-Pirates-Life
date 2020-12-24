@@ -16,7 +16,7 @@
 
     <h2>Add yer map</h2>
 
-    <%= f.fields_for (:map) do |m| %>
+    <%= f.fields_for :maps do |m| %>
         <p><%= m.label :map_name, "The name of ye map:" %>
         <%= m.text_field :map_name %></p>
 
