@@ -14,5 +14,15 @@
     <p><%= f.label :bottles_of_rum, "Bottles of Rum:" %>
     <%= f.number_field :bottles_of_rum %></p>
 
+    <h2>Add yer map</h2>
+
+    <%= f.fields_for (:map) do |m| %>
+        <p><%= m.label :map_name, "The name of ye map:" %>
+        <%= m.text_field :map_name %></p>
+
+        <p><%= m.label :secret_hiding_place, "Where be the secret place the map is stowed?:" %>
+        <%= m.text_field :secret_hiding_place %></p>
+    <% end %>
+
     <p><%= f.submit "Head to the High Seas" %></p>
 <% end %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get '/', to: 'applications#welcome'
+  get '/', to: 'application#welcome'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'pirates#new'
 
-  resources :maps
   resources :buried_treasures
-  resources :pirates
+
+  resources :pirates do
+    resources :maps
+  end
+  post '/pirates/:pirate_id/maps/new', to: 'maps#show'
   
 end
