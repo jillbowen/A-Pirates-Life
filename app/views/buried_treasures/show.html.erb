@@ -6,4 +6,4 @@
     <li>These were ye spoils: <%= @buried_treasure.description_of_booty %></li>
 </ul>
 
-<%= link_to "Back to yer home page", pirate_path(@pirate.id) %>
+<%= link_to "Back to yer home page", pirate_path(session.id) %>
