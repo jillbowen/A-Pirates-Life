@@ -1,3 +1,9 @@
 <h1 align="center">Here be yer map's secret hiding place:</h1>
-<h2 align="center"><%= @map.secret_hiding_place %></h2>
+    <% @pirate.maps.each do |map| %>
+        <h2 align="center"><%= map.secret_hiding_place %></h2>
+    <% end %>
+
+
+
+
 <p><%= link_to "Back to yer home page", pirate_path(@pirate) %></p>
