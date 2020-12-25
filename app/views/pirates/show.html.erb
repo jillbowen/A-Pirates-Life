@@ -2,7 +2,8 @@
 
 <h3 align="center">Yer sailing the <%= @pirate.name_of_ship %> with a crew of <%= @pirate.crew_size %>, and <%= @pirate.bottles_of_rum %> bottles of rum, yaaaaarg!</h3>
 
-<p><strong>Here be the map ye have:</strong></p>
+<p><strong>Here be yer map:</strong></p>
         <% @pirate.maps.each do |map| %>
-            <p><%=link_to map.map_name, pirate_map_path(@pirate) %> - <%= link_to "Add the Treasure the map led you to", new_buried_treasure_path %></p>
+            <p><%= map.map_name %>, and it's hidden: <%= map.secret_hiding_place %>. When ye find yer spoils <%=link_to "add them here", new_buried_treasure_path%></p>
         <% end %>
+

@@ -8,11 +8,13 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'pirates#new'
 
-  resources :buried_treasures
-
-  resources :pirates do
+  resources :buried_treasures do 
     resources :maps
   end
+
+  resources :pirates
+  
+  #resources :maps
 
   get '/auth/:provider/callback', to: 'sessions#create'
 
