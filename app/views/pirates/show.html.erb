@@ -2,8 +2,15 @@
 
 <h3 align="center">Yer sailing the <%= @pirate.name_of_ship %> with a crew of <%= @pirate.crew_size %>, and <%= @pirate.bottles_of_rum %> bottles of rum, yaaaaarg!</h3>
 
-<p><strong>Here be yer map:</strong></p>
-        <% @pirate.maps.each do |map| %>
-            <p><%= map.map_name %>, and it's hidden: <%= map.secret_hiding_place %>. When ye find yer spoils <%=link_to "add them here", new_buried_treasure_path%></p>
+<p><strong>Here be the treasure ye after:</strong></p>
+    <ul>
+        <% @pirate.buried_treasures.each do |buried_treasure| %>
+            <li><%= link_to buried_treasure.name, buried_treasure_path(buried_treasure) %></li>
         <% end %>
+    </ul>
+<br>
+<p><strong><%= link_to "See all the treasures Pirates be after", buried_treasures_path %></strong></p>
+</br>
+
+<p><%= link_to "Edit yer personal effects", edit_pirate_path(@pirate) %></p>
 

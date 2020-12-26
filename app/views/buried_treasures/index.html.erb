@@ -1,0 +1,7 @@
+<p><strong>Here be all the treasures Pirates are after:</strong></p>
+     <ul>   
+    <% @buried_treasures.each do |buried_treasure| %>
+        <li><%= buried_treasure.name %></li>
+    <% end %>
+    </ul>
+<p><%= link_to "Back to yer ship", pirate_path(current_pirate) %></p>
