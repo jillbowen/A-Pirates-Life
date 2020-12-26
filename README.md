@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Pirate's Life!
 
-Things you may want to cover:
+https://github.com/jillbowen/A-Pirates-Life
 
-* Ruby version
+This Ruby on Rails app allows Pirates to keep track of the treasures they are looking for (and have a map for!). They can also see what other treasures Pirates are out there searching for on the high seas.
 
-* System dependencies
+To install: 
+-clone this repository: git clone git@github.com:jillbowen/A-Pirates-Life.git
+-cd A Pirate's Life
 
-* Configuration
+Be sure to check your Ruby version (ruby -v  this project uses ruby '2.6.1', use rbenv to get to the correct version)
 
-* Database creation
+Also be sure you have bundle and yarn dependencies installed.
 
-* Database initialization
+Initialize the database:
+-rails db:create
+-rails db:migrate
 
-* How to run the test suite
+Start the server:
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Have fun on the high seas!
