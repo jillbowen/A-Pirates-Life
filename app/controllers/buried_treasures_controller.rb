@@ -1,4 +1,7 @@
 class BuriedTreasuresController < ApplicationController
+    before_action :set_buried_treasure, only: [:show, :edit, :update]
+    before_action :redirect_if_not_logged_in
+
     def new
         @buried_treasure = BuriedTreasure.new 
     end
@@ -9,24 +12,20 @@ class BuriedTreasuresController < ApplicationController
             redirect_to buried_treasure_path(@buried_treasure)
         else
             render 'new'
-            #add error message
         end
     end
 
     def index
-        @buried_treasures = BuriedTreasure.all
+        @buried_treasures = BuriedTreasure.least_cursed
     end
 
     def show
-        @buried_treasure = BuriedTreasure.find_by_id(params[:id])
     end
 
     def edit 
-        @buried_treasure = BuriedTreasure.find_by_id(params[:id])
     end
 
     def update 
-        @buried_treasure = BuriedTreasure.find_by_id(params[:id])
         if @buried_treasure.update(buried_treasure_params)
             redirect_to buried_treasure_path(@buried_treasure)
         else
@@ -38,5 +37,10 @@ class BuriedTreasuresController < ApplicationController
 
     def buried_treasure_params
         params.require(:buried_treasure).permit(:name, :booby_traps, :curses, :description_of_booty)
+    end
+
+    def set_buried_treasure
+        @buried_treasure = BuriedTreasure.find_by_id(params[:id])
+        redirect_to buried_treasure_path if !@buried_treasure
     end
 end

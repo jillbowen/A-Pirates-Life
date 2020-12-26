@@ -1,4 +1,6 @@
 class PiratesController < ApplicationController
+    before_action :set_pirate, only: [:show, :edit, :update]
+    before_action :redirect_if_not_logged_in
     
     def new
         @pirate = Pirate.new
@@ -17,8 +19,6 @@ class PiratesController < ApplicationController
     end
 
     def show
-        @pirate = Pirate.find_by_id(params[:id])
-        redirect_to '/' if !@pirate
     end
 
     def index
@@ -26,11 +26,9 @@ class PiratesController < ApplicationController
     end
 
     def edit
-        @pirate = Pirate.find_by_id(params[:id])
     end
 
     def update
-        @pirate = Pirate.find_by_id(params[:id])
         if @pirate.update(pirate_params)
             redirect_to pirate_path(current_pirate)
         else
@@ -55,5 +53,10 @@ class PiratesController < ApplicationController
                 :id
             ]
         )
+    end
+
+    def set_pirate
+        @pirate = Pirate.find_by_id(params[:id])
+        redirect_to login_path if !@pirate
     end
 end

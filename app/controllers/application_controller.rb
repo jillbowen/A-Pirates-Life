@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
     def current_pirate
         @current_pirate ||= Pirate.find_by_id(session[:pirate_id]) if session[:pirate_id]
     end
+
+    def redirect_if_not_logged_in
+        redirect_to login_path if !logged_in?
+    end
+    
 end
