@@ -8,7 +8,7 @@ class PiratesController < ApplicationController
 
     def create
         @pirate = Pirate.new(pirate_params)
-        if @pirate.save!
+        if @pirate.save
             session[:pirate_id] = @pirate.id 
             redirect_to pirate_path(current_pirate)
         else
