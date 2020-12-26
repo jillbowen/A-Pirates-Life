@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     resources :maps
   end
 
-  resources :pirates
-  
   resources :maps, only: [:edit, :update]
+
+  resources :pirates
 
   get '/auth/:provider/callback', to: 'sessions#create'
 
