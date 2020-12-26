@@ -1,0 +1,7 @@
+<h1>Here be yer Map's secret hiding place: </h1>
+<ul>
+<h2><%= @buried_treasure.name %> - <%= @map.secret_hiding_place %></h2>
+
+
+<p><%= link_to "Add or change yer secret hiding place", edit_map_path(@map) %></p>
+<p><%= link_to "Back to yer home page", pirate_path(current_pirate) %></p>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :pirates
   
-  #resources :maps
+  resources :maps, only: [:edit, :update]
 
   get '/auth/:provider/callback', to: 'sessions#create'
 

@@ -1,8 +1,15 @@
 <h1 align="center"><%= @buried_treasure.name %>!</h1>
 
+<%= link_to "See where ye hid the map", buried_treasure_map_path(@buried_treasure) %>
+
 <ul>
     <li>There were <%= @buried_treasure.booby_traps %> booby traps on the way to finding this treasure.</li>
     <li>The treasure gave ye and yer crew <%= @buried_treasure.curses %> curses.</li>
     <li>These were ye spoils: <%= @buried_treasure.description_of_booty %></li>
 </ul>
+
+<p><%= link_to "Add or change tings", edit_buried_treasure_path %>
+
+<p><%= link_to "Back to yer ship", pirate_path(current_pirate) %>
+
 

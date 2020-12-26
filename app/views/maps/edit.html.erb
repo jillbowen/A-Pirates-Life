@@ -1,0 +1,7 @@
+<h2> Add the secret hiding place: </h2>
+    <%= form_for @map do |f| %>
+        <%= f.label :secret_hiding_place %>
+        <%= f.text_field :secret_hiding_place %>
+
+        <%= f.submit %>
+    <% end %>
