@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/errors', locals: {object: @pirate} %>
+
 <%= form_for(@pirate) do |f| %>
     <p><%= f.label :name, "Yer Name:" %>
     <%= f.text_field :name %></p>
