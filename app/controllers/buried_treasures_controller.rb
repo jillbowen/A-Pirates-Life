@@ -13,8 +13,25 @@ class BuriedTreasuresController < ApplicationController
         end
     end
 
+    def index
+        @buried_treasures = BuriedTreasure.all
+    end
+
     def show
         @buried_treasure = BuriedTreasure.find_by_id(params[:id])
+    end
+
+    def edit 
+        @buried_treasure = BuriedTreasure.find_by_id(params[:id])
+    end
+
+    def update 
+        @buried_treasure = BuriedTreasure.find_by_id(params[:id])
+        if @buried_treasure.update(buried_treasure_params)
+            redirect_to buried_treasure_path(@buried_treasure)
+        else
+            render 'edit'
+        end
     end
 
     private
