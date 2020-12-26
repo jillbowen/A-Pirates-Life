@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     
-    helper_method :current_user, :logged_in?
+    helper_method :current_pirate, :logged_in?
     
     def welcome 
     end
@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
     end
 
     def current_pirate
-        @current_pirate ||= Pirate.find_by_id(session[:pirate_id]) if session[:user_id]
+        @current_pirate ||= Pirate.find_by_id(session[:pirate_id]) if session[:pirate_id]
     end
 end
