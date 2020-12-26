@@ -1,6 +1,5 @@
 class PiratesController < ApplicationController
     before_action :set_pirate, only: [:show, :edit, :update]
-    before_action :redirect_if_not_logged_in
     
     def new
         @pirate = Pirate.new
