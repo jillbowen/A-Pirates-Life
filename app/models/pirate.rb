@@ -3,7 +3,7 @@ class Pirate < ApplicationRecord
     has_many :buried_treasures, through: :maps
     validates :name, presence: true, uniqueness: true
     has_secure_password
-    accepts_nested_attributes_for :maps
+    accepts_nested_attributes_for :buried_treasures
 
     def self.find_or_create_by_omniauth(auth)
         oauth_name = auth['info']['name'] || auth['info']['nickname']
