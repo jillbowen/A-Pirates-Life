@@ -16,7 +16,11 @@ class BuriedTreasuresController < ApplicationController
     end
 
     def index
-        @buried_treasures = BuriedTreasure.least_cursed
+        if params[:search] 
+            @buried_treasures = BuriedTreasure.search(params[:search])
+        else
+            @buried_treasures = BuriedTreasure.least_cursed
+        end
     end
 
     def show
@@ -36,7 +40,7 @@ class BuriedTreasuresController < ApplicationController
     private
 
     def buried_treasure_params
-        params.require(:buried_treasure).permit(:name, :booby_traps, :curses, :description_of_booty)
+        params.require(:buried_treasure).permit(:name, :booby_traps, :curses, :description_of_booty, buried_treasure_id, :search)
     end
 
     def set_buried_treasure

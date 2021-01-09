@@ -1,7 +1,14 @@
 <p><strong>Here be all the treasures Pirates are after (starting with the least cursed treasures...so far as we know):</strong></p>
-     <ul>   
+    
+    <%= form_tag buried_treasures_path, method: :get do %>
+        <%= label_tag :search, "Search fer a Treasure:" %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Find a Treasure", :name => nil %>
+    <% end %>
+
+    <ul>   
     <% @buried_treasures.each do |buried_treasure| %>
-        <li><%= buried_treasure.name %></li>
+        <li><%=link_to buried_treasure.name, buried_treasure_path(buried_treasure) %></li>
     <% end %>
     </ul>
 <p><%= link_to "Back to yer ship", pirate_path(current_pirate) %></p>
